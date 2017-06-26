@@ -24,11 +24,17 @@ class AnimalsController < ApplicationController
   end
 
   def edit
-
+    @animal = Animal.find(params[:id])
+    render :edit
   end
 
   def update
-
+    @animal = Animal.find(params[:id])
+    if @animal.update(animal_params)
+      redirect_to animal_path
+    else
+      render :edit
+    end
   end
 
   def destroy

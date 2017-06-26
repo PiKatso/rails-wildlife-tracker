@@ -8,6 +8,6 @@
   <%= f.label :lng %>
   <%= f.text_field :lng %>
   <%= f.label :region %>
-  <%= f.text_field :region %>
+  <%= f.select :region, ["Swamp", "Coastal", "High Dessert", "Mountain", "Valley"]%>
   <%= f.submit %>
 <% end %>

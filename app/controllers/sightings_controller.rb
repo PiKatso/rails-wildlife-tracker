@@ -6,17 +6,18 @@
 
    def new
      @animal = Animal.find(params[:animal_id])
-     @sighting = @animal.sighting.new
+     @sighting = @animal.sightings.new
    end
 
    def create
      @animal = Animal.find(params[:animal_id])
-     @sighting = @animal.sighting.new(sighting_params)
+     @sighting = @animal.sightings.new(sighting_params)
      if @sighting.save
        redirect_to animal_path(@sighting.animal)
      else
        render :new
      end
+   end
 
 private
   def sighting_params

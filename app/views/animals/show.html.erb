@@ -5,15 +5,18 @@
   <ul>
     <% @animal.sightings.each do |sighting| %>
       <li>
-        <%= sighting.date, sighting.lat, sighting.lng, sighting.region %> -
-        <%= link_to "edit", edit_animal_sighting_path(@animal, sighting) %>
+        <%= sighting.date %>
+        <%= sighting.lat %>
+        <%= sighting.lng %>
+        <%= sighting.region %> -
+        <%= link_to "edit", edit_animal_sighting_path(@animal, sighting) %> -
         <%= link_to "delete", animal_sighting_path(@animal, sighting),
           :data => { :confirm => "are your sure?", :method => "delete" } %>
       </li>
     <% end %>
   </ul>
-  <%= else %>
+  <% else %>
     <p>There are no sightings yet</p>
   <% end %>
 
-<p><%= link_to "Animals", animal_path %></p>
+<p><%= link_to "Animals", animals_path %></p>

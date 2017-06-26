@@ -5,8 +5,8 @@ class AnimalsController < ApplicationController
   end
 
   def show
-    @animals = Animal.find(params[:id])
+    @animal = Animal.find(params[:id])
     render :show
   end
-  
+
 end
